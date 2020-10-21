@@ -1,23 +1,3 @@
-
-// /*Click button*/
-// function counter() {
-//     count++;
-//     document.querySelector('#score').innerHTML = `Your Score: ${count}`;    
-// }
-// /**/
-// if (count == count_check) {
-//     count_ten++;
-//     count_check += 10;
-//     document.querySelector('#points').innerHTML = `Your pointer ${count_ten}`;
-
-// }
-// if (count_ten == 1) {
-//     document.querySelector('p').innerHTML = 'Your 10 Score = 1 Points.';
-// }
-
-
-
-
 // super button
 const btn = document.querySelector("#btn1");
 // container shop
@@ -29,18 +9,41 @@ const shop__tab = document.querySelectorAll("#shop__tab");
 // shop body content (text, price ...)
 const shop__item = document.querySelectorAll(".shop__items");
 
+
+// Counts clicks (does not affect, except for the start)
 var count = 0;
+
+var click__up = 0;
+
+// Every 10 points money__count = 1 money
+// money__count = click__up + 1 
+// money = money__up + 1
+var money__count = 0;
+var money__up = 0;
+var money = 0;
+
 
 /* Super Button */
 btn.addEventListener("click", function() {
-    console.log("btn cliked");
 
-    count++;
+    /* count */
+    count ++;
+    console.log("count");
     document.querySelector("#score").innerHTML = `Your Score: ${count}`;
 
     if (count >= 10) {
+        document.querySelector("#money").innerHTML = `Your Money: ${money}`;
         shop.classList.add("shop__add");
         content__inner.classList.add("content__add");
+    }
+
+    /* money */
+    money__count += click__up + 1;
+    console.log(money__count);
+    if (money__count % 10 == 0) {
+        money++;
+        document.querySelector("#money").innerHTML = `Your Money: ${money}`;
+        console.log("money");
     }
 });
 
@@ -69,3 +72,15 @@ shop__tab.forEach(function(item) {
 
     });
 });
+
+/* Money Up */
+
+if (money__up == 0) {
+    var profit = 1;
+    var cost = 2;
+
+    document.querySelector("#profit").innerHTML = `Money profit = +${profit}`;
+    document.querySelector("#cost").innerHTML = `Cost: ${cost}`;
+};
+
+

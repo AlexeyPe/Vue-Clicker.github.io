@@ -67,8 +67,6 @@ h1,h2,h3,h4,h5,h6,p {
     flex-direction: column;
     align-items: center;
 
-    width: 50px;
-    height: 50px;
     background-color: rgba(64, 145, 108, 0.5);
 }
 .shop__add {
@@ -97,16 +95,6 @@ h1,h2,h3,h4,h5,h6,p {
     font-size: 16px;
     transition: all .2s linear;
 }
-.shop__body {
-
-}
-.shop__items {
-    display: none;
-    color: #95d5b2;
-}
-.shop__items.active {
-    display: block;
-}
 .shop__tab.active {
     background-color: #40916C;
     color: #D8F3DC;
@@ -124,6 +112,8 @@ h1,h2,h3,h4,h5,h6,p {
 @keyframes show_block {
     0% {
         opacity: 0;
+        width: 50px;
+        height: 50px;
     }
     25% {
         width: 200px;
@@ -144,6 +134,52 @@ h1,h2,h3,h4,h5,h6,p {
         width: 400px;
     }
 }
+
+
+/* ====== tab__upgrade ====== */
+.shop__body {
+    width: 100%;
+    padding: 0 20px;
+}
+.shop__items {
+    display: none;
+    color: #95d5b2;
+    width: 100%;
+    margin: 0 auto;
+}
+.shop__items.active {
+    display: block;
+}
+.items__group {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 2px solid #081c15;
+}
+.group_info {
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn__buy {
+    width: 30%;
+    height: 20%;
+    background-color: transparent;
+    border: 1px solid #95d5b2;
+    color: #95d5b2;
+    transition: .25s linear;
+    cursor: pointer;
+}
+.btn__buy:hover {
+    background-color: #95d5b2;
+    color: #40916c;
+    border: 1px solid #40916c;
+}
 /* ====== Buttom ====== */
 .btn {
     width: 25vw;
@@ -156,6 +192,7 @@ h1,h2,h3,h4,h5,h6,p {
     transition: .25s linear;
 
     margin: 0 20px;
+    cursor: pointer;
 }
 .btn:hover {
     background-color: #2d6a4f;
