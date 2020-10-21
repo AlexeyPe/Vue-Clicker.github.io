@@ -8,6 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     </head>
     <body>
+
         <!--=== Header ===-->
         <div class="container">
             <header class="header">
@@ -23,17 +24,41 @@
         </div> <!--/.container-->
         <!--=== End header ===-->
         
-        <!--=== Button ===-->
-
-        <div class="button">
+        <!--=== Main ===-->
+        <main class="content">
            <div class="container">
-                <div class="button__inner">
-                    <button class="btn" id="btn1">Button</button>
-                </div>
-            </div><!--/.container-->
-        </div> <!-- /.button -->
+                <div class="content__inner" id="content__inner">
+                    <article class="shop" id="shop">
+                        <div class="shop__header">
+                            <div class="shop__title">Shop</div>
+                            <div class="hr"></div>
+                        </div>
 
-        <!--=== End button ===-->
+                        <nav class="shop__nav">
+                            <button class="shop__tab" id="shop__tab" data-tab="#tab_theme">Theme</button>
+
+                            <button class="shop__tab" id="shop__tab" data-tab="#tab_upgrade">Upgrade</button>
+                        </nav>
+
+                        <div class="shop__body">
+                            <article class="shop__items" id="tab_theme">
+                                No Theme ;C
+                            </article> 
+
+                            <article class="shop__items" id="tab_upgrade">
+                                No upgrade...
+                            </article> 
+                        </div> <!-- /.shop__body -->
+
+                    </article> <!-- /.shop -->
+
+                    <!-- Super button -->
+                    <button class="btn" id="btn1">Button</button>
+                    
+                </div> <!-- /.content__inner -->
+            </div><!--/.container-->
+        </main> <!-- /.button -->
+        <!--=== End Main ===-->
 
 
         <!--=== Footer ===-->
