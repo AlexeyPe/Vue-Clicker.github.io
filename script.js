@@ -9,6 +9,8 @@ const shop__tab = document.querySelectorAll("#shop__tab");
 // shop body content (text, price ...)
 const shop__item = document.querySelectorAll(".shop__items");
 
+const btn__money__up = document.querySelector("#btn__money__up");
+
 
 // Counts clicks (does not affect, except for the start)
 var count = 0;
@@ -22,14 +24,12 @@ var money__count = 0;
 var money__up = 0;
 var money = 0;
 
-
 /* Super Button */
 btn.addEventListener("click", function() {
 
     /* count */
     count ++;
-    console.log("count");
-    document.querySelector("#score").innerHTML = `Your Score: ${count}`;
+    document.querySelector("#score").innerHTML = `Your Click: ${count}`;
 
     if (count >= 10) {
         document.querySelector("#money").innerHTML = `Your Money: ${money}`;
@@ -39,11 +39,11 @@ btn.addEventListener("click", function() {
 
     /* money */
     money__count += click__up + 1;
-    console.log(money__count);
+    console.log(`money__count ${money__count}`);
     if (money__count % 10 == 0) {
-        money++;
+        money += money__up + 1;
         document.querySelector("#money").innerHTML = `Your Money: ${money}`;
-        console.log("money");
+        console.log(`money ${money}`);
     }
 });
 
@@ -53,8 +53,7 @@ shop__tab.forEach(function(item) {
 
         let currentTab = item;
         let tabID = currentTab.getAttribute("data-tab");
-        let currentContent = document.querySelector(tabID);
-        console.log(tabID);  
+        let currentContent = document.querySelector(tabID); 
         
         //if the tab is active, it is not updated
         if ( ! currentTab.classList.contains("active") ) {
@@ -75,11 +74,36 @@ shop__tab.forEach(function(item) {
 
 /* Money Up */
 
-if (money__up == 0) {
-    var profit = 1;
-    var cost = 2;
+var cost = 2;
+document.querySelector("#cost").innerHTML = `Cost: ${cost}`;
 
-    document.querySelector("#profit").innerHTML = `Money profit = +${profit}`;
+var profit = 1;
+document.querySelector("#profit").innerHTML = `Money profit +${profit}`;
+
+var upgrade__count = 0;
+
+btn__money__up.onclick = function () {
+    if (money >= cost) {
+
+        upgrade__count++;
+        money -= cost;
+        money__up += profit;
+
+        if (cost % 2 == 0) {
+            cost += 3;
+            if (cost >= 50){
+                cost *= 2 + upgrade__count;
+            }
+        } else {
+            cost *= 3;
+            cost--;
+        }
+
+        document.querySelector("#money").innerHTML = `Your Money: ${money}`;
+
+        console.log(`money ${money}`);
+        console.log(`money__up ${money__up}`);
+    }
     document.querySelector("#cost").innerHTML = `Cost: ${cost}`;
 };
 
