@@ -8,77 +8,94 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="page">
 
-        <!--=== Header ===-->
-        <div class="container">
             <header class="header">
                 <div class="header__inner">
+
                     <div class="header__items">
                         <h1 id="score">Hello! Ten clicks on the button, please!</h1>
                     </div>
+
                     <div class="header__items">
                         <h2 id="money"></h2>
                     </div>
+
                 </div>
-            </header> <!--/.header-->
-        </div> <!--/.container-->
-        <!--=== End header ===-->
+            </header> <!-- /.header -->
         
-        <!--=== Main ===-->
-        <main class="content">
-           <div class="container">
-                <div class="content__inner" id="content__inner">
-                    <article class="shop" id="shop">
+            <main class="main">
+                    <div class="shop__area">
+                        <article class="shop" id="shop">
 
-                        <div class="shop__header">
-                            <div class="shop__title">Shop</div>
-                            <div class="hr"></div>
-                        </div>
+                            <div class="shop__header">
+                                <button class="shop__tab" id="shop__tab" data-tab="#tab_theme">Theme</button>
 
-                        <nav class="shop__nav">
-                            <button class="shop__tab" id="shop__tab" data-tab="#tab_theme">Theme</button>
+                                <button class="shop__tab" id="shop__tab" data-tab="#tab_upgrade">Upgrade</button>
+                            </div>
 
-                            <button class="shop__tab" id="shop__tab" data-tab="#tab_upgrade">Upgrade</button>
-                        </nav>
+                            <div class="shop__body">
+                                <article class="shop__items" id="tab_theme">
+                                    No Theme ;C
+                                </article> 
 
-                        <div class="shop__body">
-                            <article class="shop__items" id="tab_theme">
-                                No Theme ;C
-                            </article> 
+                                <article class="shop__items" id="tab_upgrade">
+                                    <!-- money profit -->
+                                    <div class="items__group">
+                                        <div class="group__title">Upgrade money profit</div>
+                                        <article class="group_info">
+                                            <p id="profit">Money profit = +"n"</p>
+                                            <p id="cost">Cost: "n"</p>
+                                        </article>
+                                        <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
+                                    </div>
+                                    <!-- money profit -->
+                                    <div class="items__group">
+                                        <div class="group__title">Upgrade money profit</div>
+                                        <article class="group_info">
+                                            <p id="profit">Money profit = +"n"</p>
+                                            <p id="cost">Cost: "n"</p>
+                                        </article>
+                                        <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
+                                    </div>
+                                    <!-- money profit -->
+                                    <div class="items__group">
+                                        <div class="group__title">Upgrade money profit</div>
+                                        <article class="group_info">
+                                            <p id="profit">Money profit = +"n"</p>
+                                            <p id="cost">Cost: "n"</p>
+                                        </article>
+                                        <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
+                                    </div>
+                                </article>
 
-                            <article class="shop__items" id="tab_upgrade">
-                                <!-- money profit -->
-                                <div class="items__group">
-                                    <div class="group__title">Upgrade money profit</div>
-                                    <article class="group_info">
-                                        <p id="profit">Money profit = +"n"</p>
-                                        <p id="cost">Cost: "n"</p>
-                                    </article>
-                                    <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
-                                </div><!-- end money profit -->
-                            </article> 
-                        </div> <!-- /.shop__body -->
-                    </article> <!-- /.shop -->
+
+
+                            </div> <!-- /.shop__body -->
+
+                        </article> <!-- /.shop -->
+                    </div> <!-- /.shop__area -->
 
                     <!-- Super button -->
-                    <button class="btn" id="btn1">Button</button>
+                    <div class="btn__area">
+                        <button class="btn" id="btn1">Button</button>
+                    </div>
 
-                </div> <!-- /.content__inner -->
-            </div><!--/.container-->
-        </main> <!-- /.button -->
-        <!--=== End Main ===-->
+            </main> <!-- main -->
+        
 
+            <!--=== Footer ===-->
+            <footer class="footer">
+               <div class="container">
+                    <div class="footer__inner">
+                        <div class="footer__items">Create by AlexeySay</div>
+                        <div class="footer__items"><p id="f2"></p></div>
+                    </div>
+                </div><!--/.container-->
+            </footer>
+            <!--=== End footer ===-->
 
-        <!--=== Footer ===-->
-        <footer class="footer">
-           <div class="container">
-                <div class="footer__inner">
-                    <div class="footer__items">Create by AlexeySay</div>
-                    <div class="footer__items"><p id="f2"></p></div>
-                </div>
-            </div><!--/.container-->
-        </footer>
-        <!--=== End footer ===-->
+        </div> <!-- /.page -->
 
         <script src="script.js"></script>
     </body>

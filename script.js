@@ -2,25 +2,21 @@
 const btn = document.querySelector("#btn1");
 // container shop
 const shop = document.querySelector("#shop");
-// main container (shop and button)
-const content__inner = document.querySelector("#content__inner");
-// shop tab (theme and upgrade)
+// shop tab
 const shop__tab = document.querySelectorAll("#shop__tab");
-// shop body content (text, price ...)
+// shop body content
 const shop__item = document.querySelectorAll(".shop__items");
 
 const btn__money__up = document.querySelector("#btn__money__up");
+const main = document.querySelector("main");
+const shop__area = document.querySelector(".shop__area");
 
-
-// Counts clicks (does not affect, except for the start)
+// Counts clicks 
 var count = 0;
 
-var click__up = 0;
-
-// Every 10 points money__count = 1 money
-// money__count = click__up + 1 
+// Every 10 count += money__up
 // money = money__up + 1
-var money__count = 0;
+
 var money__up = 0;
 var money = 0;
 
@@ -33,21 +29,20 @@ btn.addEventListener("click", function() {
 
     if (count >= 10) {
         document.querySelector("#money").innerHTML = `Your Money: ${money}`;
-        shop.classList.add("shop__add");
-        content__inner.classList.add("content__add");
+        shop.classList.add("show");
+        main.classList.add("maintwo");
+        shop__area.classList.add("show");
     }
 
     /* money */
-    money__count += click__up + 1;
-    console.log(`money__count ${money__count}`);
-    if (money__count % 10 == 0) {
+    if (count % 10 == 0) {
         money += money__up + 1;
         document.querySelector("#money").innerHTML = `Your Money: ${money}`;
-        console.log(`money ${money}`);
+        console.log(`money: ${money}`);
     }
 });
 
-/* Shop Button*/
+/* Shop Tab*/
 shop__tab.forEach(function(item) {
     item.addEventListener("click", function() {
 
