@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}Clicker{% endblock %}</title>
+        <link href="{% static 'clicker/style.css' %}" rel="stylesheet">
+        <!-- Google Fonts-->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <!--main__page grid: nav | game/reg/login > page(game(index)) grid: header main footer -->
+        <div class="main__page">
+
+            <nav class="nav">
+                <div class="nav__inner">
+                    <div class="nav__item"><a href="{% url 'index' %}">Game</a></div>
+                    {% if user.is_authenticated %}
+                    <div class="nav__item"><a href="{% url 'logout' %}">Logout</a></div>
+                    {% else %}
+                    <div class="nav__item"><a href="{% url 'register' %}">Register</a></div>
+                    <div class="nav__item"><a href="{% url 'login' %}">Login</a></div>
+                    {% endif %}
+                </div>
+            </nav>
+            
+            <div class="body">
+                {% block body %}
+                {% endblock %}
+            </div>
+
+        </div><!-- /.main__page -->
+
+        <script src="{% static 'clicker/script.js' %}"></script>
+    </body>
+</html>

@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Cliker</title>
-        <!-- CSS code -->
-        <link rel="stylesheet" href="style.css">
-        <!-- Google Fonts-->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="page">
+{% extends "clicker/layout.html" %}
+
+{% block body %}
+    {% if user.is_authenticated %}
+    <div class="page">
 
             <header class="header">
                 <div class="header__inner">
@@ -96,7 +90,9 @@
             <!--=== End footer ===-->
 
         </div> <!-- /.page -->
+        {% else %}
+        <p style="color: orange; font-size: 50px; text-align: center;">Please, login or register </p>
+        {% endif %}
 
         <script src="script.js"></script>
-    </body>
-</html>
+{% endblock %}
