@@ -5,6 +5,12 @@ body {
     background-color: #03071E;
     background-image: url("images/background.png");
 }
+
+.li {
+    color: #fff !important;
+}
+
+
 *, *:after, *:before {
     box-sizing: border-box;
 }
@@ -48,8 +54,16 @@ h1,h2,h3,h4,h5,h6,p {
     cursor: pointer;
     margin: 0;
     padding: 20px;
+    background-color: transparent;
+    color: #FFBA08;
+    border: 0;
+    font-size: 20px;
+    text-align: left;
 
     transition: .2s linear;
+}
+.nav__item:focus {
+    outline: none;
 }
 .nav__item:hover {
     background-color: rgba(99,99,99, .4);
