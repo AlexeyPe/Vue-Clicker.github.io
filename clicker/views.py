@@ -61,3 +61,6 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "clicker/register.html")
+
+def top(request):
+    return render(request, "clicker/top.html")

@@ -16,6 +16,7 @@
             <nav class="nav">
                 <div class="nav__inner">
                     <div class="nav__item"><a href="{% url 'index' %}">Game</a></div>
+                    <div class="nav__item"><a href="{% url 'top' %}">Top</a></div>
                     {% if user.is_authenticated %}
                     <div class="nav__item"><a href="{% url 'logout' %}">Logout</a></div>
                     {% else %}

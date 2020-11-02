@@ -101,5 +101,3 @@ btn__money__up.onclick = function () {
     }
     document.querySelector("#cost").innerHTML = `Cost: ${cost}`;
 };
-
-
