@@ -1,3 +1,12 @@
+html[lang="ru"] [lang="en"] {
+    display: none;
+}
+html[lang="en"] [lang="ru"] {
+    display: none;
+}
+.active {
+    display: block;
+}
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
@@ -17,64 +26,11 @@ h1,h2,h3,h4,h5,h6,p {
     height: 1px;
     background-color: #FFBA08;
 }
-/* ====== layout - main__page ====== */
-.main__page {
-    display: grid;
-    grid-template-columns: 10vw 1fr;
-    grid-area: 
-    "nav page";
-    min-height: 100vh;
-}
-/* ====== layout - nav ====== */
-.nav {
-    width: 100%;
-    height: 100vh;
-    background-color: #03071E;
-    border-right: 1px solid #FFBA08; 
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-.nav__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-    padding: 30px 0;
-}
-.nav__item {
-    width: 100%;
-    cursor: pointer;
-    margin: 0;
-    padding: 20px;
-    background-color: transparent;
-    color: #FFBA08;
-    border: 0;
-    font-size: 20px;
-    text-align: left;
-
-    transition: .2s linear;
-}
-.nav__item:focus {
-    outline: none;
-}
-.nav__item:hover {
-    background-color: rgba(99,99,99, .4);
-}
-.nav__item > a {
-    text-decoration: none;
-    color: #FFBA08;
-    font-size: 20px;
-}
-
 /* ====== Page ====== */
 .page {
-    grid-area: page;
-
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: minmax(15vh, auto) 1fr 10vh;
+    grid-template-rows: auto 1fr 10vh;
     grid-template-areas: 
     "header header"
     "main main"
@@ -98,57 +54,12 @@ h1,h2,h3,h4,h5,h6,p {
     background-color: #03071E;
     
 }
-/* == login or register ==*/
-.form {
-    width: 50%;
-    height: auto;
-    padding: 40px 0;
-    max-height: 100vh;
-    background-color: #03071E;
-    color: #FFBA08;
-
-    border-top: 2px solid #FFBA08;
-    border-bottom: 2px solid #FFBA08;
-    border-radius: 15px;
-}
-.form__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 50%;
-    margin: 0 auto;
-}
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-form .btn {
-    width: 60%;
-    height: 3vw;
-    font-size: 1vw;
-    font-weight: 400;
-    align-self: center;
-    margin: 20px 0;
-}
-.form__title {
-    font-size: 3vw;
-}
-.form__input {
-    padding: 5px 10px;
-    margin: 10px auto;
-    width: 100%;
-}
 /* ====== Header ====== */
 .header {
     grid-area: header;
 
     display: flex;
     width: 100%;
-    flex-direction: row;
     justify-content: center;
 }
 .header__inner {
@@ -160,7 +71,8 @@ form .btn {
     width: auto;
     min-width: 50%;
     height: auto;
-    padding: 10px;
+    min-height: 80px;
+    padding: 0 10px;
 
     background-color: #03071e;
     text-align: center;
@@ -169,6 +81,43 @@ form .btn {
 }
 .header__items {
     color: #ffba08;
+}
+
+/* ----- langswitcher ----- */
+.langswitcher {
+    position: absolute;
+    top:  15px;
+    left: 20px;
+    width: 100px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 30px;
+    cursor: pointer;
+    background-color: #370617;
+    transition: .4s;
+    box-shadow: 0 0 2px 0 #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.langswitcher div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 25px;
+}
+.langswitcher div > a {
+    z-index: 10;
+    text-decoration: none;
+    color: #faa307;
+}
+.langswitcher div.active {
+    width: 50px;
+    height: 25px;
+    border-radius: 30px;
+    background-color: #6a040f;
 }
 
 /* ====== Main ====== */

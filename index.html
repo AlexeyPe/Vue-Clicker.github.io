@@ -5,17 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Clicker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
 <div class="page">
 
     <header class="header">
+
+        <label class="langswitcher">
+            <div class="active"><a href="#ru" data-lang="ru">Ru</a></div>
+            <div><a href="#en" data-lang="en">En</a></div>
+        </label>
+
         <div class="header__inner">
-    
             <div class="header__items">
-                <h1 id="score">Hello! Ten clicks on the button, please!</h1>
+                <h1 lang="en" id="score">Hello! Ten clicks on the button, please!</h1>
+                <h1 lang="ru" id="score">Здравствуйте! Десять нажатий на кнопку, пожалуйста!</h1>
             </div>
     
             <div class="header__items">
@@ -92,6 +99,7 @@
 </div> <!-- /.page -->
     
 <script src="script.js"></script>
+<script src="lang.js"></script>
 
 </body>
 </html>
