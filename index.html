@@ -1,97 +1,59 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Vue Clicker</title>
 </head>
 <body>
+    
+    <div class="page" id="app">
 
-<div class="page">
-
-    <header class="header">
-        <div class="header__inner">
-    
-            <div class="header__items">
-                <h1 id="score">Hello! Ten clicks on the button, please!</h1>
-            </div>
-    
-            <div class="header__items">
-                <h2 id="money"></h2>
-            </div>
-    
-        </div>
-    </header>
-    
-    <main class="main">
-            <div class="shop__area">
-                <article class="shop" id="shop">
-    
-                    <div class="shop__header">
-                        <button class="shop__tab" id="shop__tab" data-tab="#tab_upgrade">Upgrade</button>
-                    </div>
-    
-                    <div class="shop__body">
-    
-                        <article class="shop__items" id="tab_upgrade">
-                            <!-- money profit -->
-                            <div class="items__group">
-                                <div class="group__title">Upgrade money profit</div>
-                                <article class="group_info">
-                                    <p id="profit">Money profit = +"n"</p>
-                                    <p id="cost">Cost: "n"</p>
-                                </article>
-                                <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
-                            </div>
-                            <!-- money profit -->
-                            <div class="items__group">
-                                <div class="group__title">Upgrade money profit</div>
-                                <article class="group_info">
-                                    <p id="profit">Money profit = +"n"</p>
-                                    <p id="cost">Cost: "n"</p>
-                                </article>
-                                <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
-                            </div>
-                            <!-- money profit -->
-                            <div class="items__group">
-                                <div class="group__title">Upgrade money profit</div>
-                                <article class="group_info">
-                                    <p id="profit">Money profit = +"n"</p>
-                                    <p id="cost">Cost: "n"</p>
-                                </article>
-                                <button class="btn__buy" id="btn__money__up">Buy upgrade</button>
-                            </div>
-                        </article>
-    
-    
-    
-                    </div> <!-- /.shop__body -->
-    
-                </article> <!-- /.shop -->
-            </div> <!-- /.shop__area -->
-    
-            <!-- Super button -->
-            <div class="btn__area">
-                <button class="btn" id="btn1">Button</button>
-            </div>
-    
-    </main>
-    
-    
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__inner">
-                <div class="footer__items">Create by AlexeySay</div>
-                <div class="footer__items"><p id="f2"></p></div>
+        <div class="shop">
+            <div class="shop__inner">
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                <div class="shop__item">
+                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                </div>
+                
             </div>
         </div>
-    </footer>
-    
-</div> <!-- /.page -->
-    
-<script src="script.js"></script>
+
+        <div class="btn">
+            <button class="main__btn" @click="mainBtn"> Кликни на меня</button>
+        </div>
+        
+        <div class="stats">
+            <div class="stats__inner">
+                <div>Всего кликов: {{ counter }}</div>
+                <div>Клик улучшен на {{ counterUp - 1 }}</div>
+            </div>
+        </div>
+
+        <div class="achievements">
+            <div class="ach__inner">
+                <div v-for="item in list" v-bind:class="{'line' : item.done}"> {{ item.name }} </li>
+            </div>
+        </div>
+
+    </div>
 
 </body>
+<script src="script.js"></script>
 </html>
