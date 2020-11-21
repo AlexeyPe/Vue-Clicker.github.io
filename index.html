@@ -13,42 +13,52 @@
 
         <div class="shop">
             <div class="shop__inner">
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
+                <div class="shop__title">Улучшения</div>
+
+                <div class="shop__body">
+                    <div class="shop__item" v-for="item in upgrade">
+                        <p class="shop__item__title">{{ item.name }} {{ item.idUp }}</p>
+                        <div class="shop__item__info">
+                            <p>Цена: {{ item.cost }} очков</p>
+                            <p>{{ item.info }} +{{ item.info_int }}</p>
+                        </div>
+                        <button class="shop__item__button">Купить</button>
+                    </div>
                 </div>
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
-                </div>
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
-                </div>
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
-                </div>
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
-                </div>
-                <div class="shop__item">
-                    <button @click="counterUpM"> Увеличить количество кликов</button>
-                </div>
-                
             </div>
         </div>
 
         <div class="btn">
+            <div class="social">created <a href="https://github.com/AlexeySay">alexeysay</a></div>
+
             <button class="main__btn" @click="mainBtn"> Кликни на меня</button>
         </div>
         
         <div class="stats">
             <div class="stats__inner">
-                <div>Всего кликов: {{ counter }}</div>
-                <div>Клик улучшен на {{ counterUp - 1 }}</div>
+                <div class="stats__title">Статистика</div>
+
+                <div class="stats__body">
+                    <div>Всего кликов: {{ counter }}</div>
+                    <div>Ваши очки: {{ score }}</div>
+                </div>
             </div>
         </div>
 
         <div class="achievements">
             <div class="ach__inner">
-                <div v-for="item in list" v-bind:class="{'line' : item.done}"> {{ item.name }} </li>
+                <div class="ach__title">Достижения</div>
+
+                <div class="ach__buttons">
+                    <button class="ach__btn">Все</button>
+                    <button class="ach__btn">Выполненные</button>
+                    <button class="ach__btn">Не выполненные</button>
+                </div>
+                
+                <div class="ach__body">
+                    <div v-for="item in achievements" v-bind:class="{'line' : item.done}"> {{ item.name }} </li>
+                </div>
+                {{achievementsUpdate}}
             </div>
         </div>
 

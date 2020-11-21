@@ -1,9 +1,8 @@
-body {margin: 0;}* {box-sizing: border-box;}:focus {outline: none;}
+body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: none;} p {margin: 0;}
 
 .page {
     width: 100%;
     height: 100vh;
-    overflow: hidden;
 
     display: grid;
     grid-template-rows: auto auto 45vh;
@@ -23,14 +22,15 @@ body {margin: 0;}* {box-sizing: border-box;}:focus {outline: none;}
 =================================*/
 .shop {
     display: flex;
-    align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     grid-area: shop;
 }
 .btn {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     height: 100%;
     grid-area: btn;
@@ -41,6 +41,8 @@ body {margin: 0;}* {box-sizing: border-box;}:focus {outline: none;}
     grid-area: achievements;
 }
 .stats {
+    padding: 20px;
+    padding-bottom: 0;
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -62,40 +64,106 @@ body {margin: 0;}* {box-sizing: border-box;}:focus {outline: none;}
     width: 18vw;
     height: 4vw;
 }
+.social {
+    text-align: center;
+    width: 30%;
+    padding: 0 5px 2px;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.social a {
+    color: rgba(255, 71, 83, 0.6);
+    text-decoration: none;
+    border-bottom: 1px solid #ff475300;
+    transition: .2s linear;
+}
+.social a:hover {
+    color: #ff4753;
+    border-color: #ff4753;
+}
 
 /* ================================================ 
 === shop
 =================================*/
 .shop__inner {
-    height: 90%;
-    width: 90%;
-    padding: 20px 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.shop__body {
+    height: 90%;
     overflow: auto;
-    overflow-x: hidden;   
 }
-.shop__inner::-webkit-scrollbar {
-    width: 7px;
+.shop__body::-webkit-scrollbar {
+    width: 6px;
 }
-.shop__inner::-webkit-scrollbar-thumb {
-    border-radius: 2px;
+.shop__body::-webkit-scrollbar-thumb {
+    border-radius: 25px;
     background-color: #ddd;
 }
+.shop__title {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
 .shop__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 10px auto 60px;
     width: 95%;
-    padding: 5px;
+    height: auto;
     border: 1px solid #ddd;
+    border-radius: 5px;
+    position: relative;
+}
+.shop__item__title {
+    width: 100%;
+    padding: 3px 0;
+    color: #000;
+    background-color: #ddd;
+    text-align: center;
+}
+.shop__item__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+}
+.shop__item__button {
+    cursor: pointer;
+    font-family: consolas, serif;
+    font-weight: 600;
+    font-size: 16px;
+    width: 100.5%;
+    border: 0;
+    padding: 3px 0 4px;
+    transition: .2s linear;
+    margin-bottom: -1px;
+    border-radius: 0 0 3px 3px;
+}
+.shop__item__button:hover {
+    bottom: 0;
+    z-index: 100;
+    background-color: #1eda6c;
 }
 
 /* ================================================ 
 === stats
 =================================*/
 .stats__inner {
-    height: 80%;
-    width: 90%;
-    padding: 20px;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.stats__title {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+.stats__body {
+    padding: 20px;
+    padding-top: 0;
 }
 
 /* ================================================ 
@@ -106,10 +174,40 @@ body {margin: 0;}* {box-sizing: border-box;}:focus {outline: none;}
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 10px 0 10px 15px;
     background-color: rgba(0, 0, 0, 0.5);
+}
+.ach__title {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
+.ach__buttons {
+    display: flex;
+}
+.ach__btn {
+    flex: 1 1 0;
+    padding: 5px 0;
+    font-family: consolas;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    border: 0;
+    background-color: #ddd;
+    width: auto;
+    transition: .2s linear;
+}
+.ach__btn:nth-child(2){
+    border-left: 1.5px solid #33333399;
+    border-right: 1.5px solid #33333399;
+}
+.ach__btn:hover {
+    background-color: rgba(221, 221, 221, 0.7);
+}
+.ach__body {
+    padding: 15px 10px;
+    text-align: center;
 }
 .line {
     text-decoration: line-through;
-    color: #fff;
+    color: #f99;
 }

@@ -2,20 +2,30 @@ var app = new Vue({
     el: '#app',
     data: {
         counter: 0,
-        counterUp: 1,    
-        list: [
-            { id: 0, name: 'Кликните 10 раз', done: false },
+        score: 0,    
+        achievements: [
+            { inte: 10, name: 'Кликните 10 раз', done: false },
+            { inte: 20, name: 'Кликните 20 раз', done: false },
         ],
+        upgrade: [
+            { cost: 10, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 1 },
+            { cost: 50, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 2 },
+            { cost: 200, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 3 }
+        ]
     },
     methods: {
         mainBtn: function() {
-            console.log('mainBtn')
-            this.counter += this.counterUp; 
-            return this.counter;
-        },
-        counterUpM: function() {
-            console.log('counterUpM')
-            this.counterUp++
+            this.counter++
+            this.score++
+        }
+    },
+    computed: {
+        achievementsUpdate: function() {
+            this.achievements.forEach((item) => {
+                if(item.inte == this.counter) {
+                    item.done = true
+                }
+            })
         }
     }
 })
