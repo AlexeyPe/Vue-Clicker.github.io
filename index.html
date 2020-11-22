@@ -17,12 +17,13 @@
 
                 <div class="shop__body">
                     <div class="shop__item" v-for="item in upgrade">
-                        <p class="shop__item__title">{{ item.name }} {{ item.idUp }}</p>
+                        <p class="shop__item__title">{{ item.name }}</p>
                         <div class="shop__item__info">
                             <p>Цена: {{ item.cost }} очков</p>
                             <p>{{ item.info }} +{{ item.info_int }}</p>
+                            <p>Уровень: {{item.level}}</p>
                         </div>
-                        <button class="shop__item__button">Купить</button>
+                        <button class="shop__item__button" @click="shopBtnClick(item)">Купить</button>
                     </div>
                 </div>
             </div>
@@ -31,15 +32,20 @@
         <div class="btn">
             <div class="social">created <a href="https://github.com/AlexeySay">alexeysay</a></div>
 
-            <button class="main__btn" @click="mainBtn"> Кликни на меня</button>
+            <button class="main__btn" @click="mainBtn"> <img src="skelets.png" alt=""></button>
         </div>
         
         <div class="stats">
+
+            <div id="complitedText">Вы выполнили достижение</div>
+            <div id="errorText">Недостаточно очков</div>
+
             <div class="stats__inner">
                 <div class="stats__title">Статистика</div>
 
                 <div class="stats__body">
                     <div>Всего кликов: {{ counter }}</div>
+                    <div>Очков за клик: {{ scoreUp }}</div>
                     <div>Ваши очки: {{ score }}</div>
                 </div>
             </div>
@@ -61,9 +67,10 @@
                 {{achievementsUpdate}}
             </div>
         </div>
-
     </div>
-
+    <audio id="complited" src="sound/complited.mp3"></audio>
+    <audio id="upgrade" src="sound/upgrade.mp3"></audio>
+    <audio id="error" src="sound/error.mp3"></audio>
 </body>
 <script src="script.js"></script>
 </html>
