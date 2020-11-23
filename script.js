@@ -16,8 +16,8 @@ var app = new Vue({
             { idUp: 0, cost: 10, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 1, level: 0},
             { idUp: 1, cost: 100, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 2, level: 0 },
             { idUp: 2, cost: 350, name: 'Увеличить получение очков', info: 'Очков за клик', info_int: 3, level: 0 },
-            { idUp: 3, cost: 1000, name: 'Автоматические очки', info: 'Очков в секунду', info_int: 1, level: 0 },
-            { idUp: 3, cost: 2350, name: 'Автоматические очки', info: 'Очков в секунду', info_int: 2, level: 0 },
+            { idUp: 3, cost: 600, name: 'Автоматические очки', info: 'Очков в секунду', info_int: 1, level: 0 },
+            { idUp: 3, cost: 1000, name: 'Автоматические очки', info: 'Очков в секунду', info_int: 2, level: 0 },
         ],
         skeleton: ['sound/skeleton/skeleton_1.mp3','sound/skeleton/skeleton_2.mp3','sound/skeleton/skeleton_3.mp3','sound/skeleton/skeleton_4.mp3','sound/skeleton/skeleton_5.mp3']
     },
