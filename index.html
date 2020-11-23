@@ -33,12 +33,15 @@
             <div class="social">created <a href="https://github.com/AlexeySay">alexeysay</a></div>
 
             <button class="main__btn" @click="mainBtn"> <img src="skelets.png" alt=""></button>
+            {{ scoreUpdate }}
         </div>
         
         <div class="stats">
 
-            <div id="complitedText">Вы выполнили достижение</div>
-            <div id="errorText">Недостаточно очков</div>
+            <div class="message">
+                <div id="complitedText">Вы выполнили достижение</div>
+                <div id="errorText">Недостаточно очков</div>
+            </div>
 
             <div class="stats__inner">
                 <div class="stats__title">Статистика</div>
@@ -46,6 +49,7 @@
                 <div class="stats__body">
                     <div>Всего кликов: {{ counter }}</div>
                     <div>Очков за клик: {{ scoreUp }}</div>
+                    <div>Очков в секунду: {{ passiveScore }}</div>
                     <div>Ваши очки: {{ score }}</div>
                 </div>
             </div>
@@ -54,15 +58,9 @@
         <div class="achievements">
             <div class="ach__inner">
                 <div class="ach__title">Достижения</div>
-
-                <div class="ach__buttons">
-                    <button class="ach__btn">Все</button>
-                    <button class="ach__btn">Выполненные</button>
-                    <button class="ach__btn">Не выполненные</button>
-                </div>
                 
                 <div class="ach__body">
-                    <div v-for="item in achievements" v-bind:class="{'line' : item.done}"> {{ item.name }} </li>
+                    <div v-for="item in achievements" class="ach__text" :class="{'line' : item.done}"> {{ item.name }} </li>
                 </div>
                 {{achievementsUpdate}}
             </div>

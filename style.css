@@ -41,8 +41,7 @@ body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: no
     grid-area: achievements;
 }
 .stats {
-    padding: 20px;
-    padding-bottom: 0;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -101,7 +100,13 @@ body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: no
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
 }
+.shop__title {
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+}
 .shop__body {
+    margin-top: 5px;
     height: 90%;
     overflow: auto;
 }
@@ -111,11 +116,6 @@ body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: no
 .shop__body::-webkit-scrollbar-thumb {
     border-radius: 25px;
     background-color: #ddd;
-}
-.shop__title {
-    width: 100%;
-    padding: 15px 0;
-    text-align: center;
 }
 .shop__item {
     display: flex;
@@ -176,29 +176,23 @@ body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: no
     padding: 20px;
     padding-top: 0;
 }
-#complitedText {
-    opacity: 0;
-    transition: .2s linear;
-    font-size: 15px;
-    text-align: center;
+.message {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
+    height: 50px;
+}
+#complitedText {
+    display: none;
+    font-size: 15px;
     color: #1eda6c;
-    padding: 0 0 3px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 #errorText {
-    opacity: 0;
-    transition: .1s linear;
+    display: none;
     font-size: 15px;
-    text-align: center;
-    width: 100%;
     color: #ff4753;
-    padding: 0 0 3px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 /* ================================================ 
@@ -212,35 +206,18 @@ body {margin: 0;}*,*:after,*:before {box-sizing: border-box;}:focus {outline: no
     background-color: rgba(0, 0, 0, 0.5);
 }
 .ach__title {
-    width: 100%;
+    margin: 0 auto;
+    width: 60%;
     padding: 15px 0;
     text-align: center;
-}
-.ach__buttons {
-    display: flex;
-}
-.ach__btn {
-    flex: 1 1 0;
-    padding: 5px 0;
-    font-family: consolas;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    border: 0;
-    background-color: #ddd;
-    width: auto;
-    transition: .2s linear;
-}
-.ach__btn:nth-child(2){
-    border-left: 1.5px solid #33333399;
-    border-right: 1.5px solid #33333399;
-}
-.ach__btn:hover {
-    background-color: rgba(221, 221, 221, 0.7);
+    border-bottom: 1px solid #ddd;
 }
 .ach__body {
     padding: 15px 10px;
     text-align: center;
+}
+.ach__text {
+    margin: 6px 0;
 }
 .line {
     text-decoration: line-through;
