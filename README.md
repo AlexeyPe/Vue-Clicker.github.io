@@ -42,3 +42,5 @@
 [js_task.github.io](https://github.com/AlexeySay/js_task.github.io) - здесь я выполнял задания по JS, которые находил в интернете
 
 [vue_shop](https://github.com/AlexeySay/vue_shop) - здесь я создавал магазин по обучающему видео, использовал Vue CLI, Vuex, Vue-router, Axios
+
+[ActiveBox](https://github.com/AlexeySay/ActiveBox.github.io) - здесь я создавал сайт по обучающему видео, в котором использовалась библеотека slick, адаптивня вёрстка и др.
