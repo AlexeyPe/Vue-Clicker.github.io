@@ -1,14 +1,13 @@
 [Ссылка на игру](https://alexeysay.github.io/Vue-Clicker.github.io/)
 <h1 align="center"> My Vue Clicker </h1>
 
-![demo photo](demo.jpg)
+![demo photo](demo.png)
 
-### About the game:
-This is the first thing I did myself in Vue.
+## Это мой первый опыт использования js и vue
 
-The game has:
-  Upgrade store (unbalanced)
-  Notifications about improvements / achievements / lack of currency for action (above the statistics board)
-  Achievement board
-  Player stats
-  Sounds of achievement, damage, improvements, errors
+## Функционал
+- Магазин улучшений (несбалансировано)
+- Уведомления об улучшениях / достижениях / нехватке валюты для действий (над панелью статистики)
+- Таблица достижений
+- Статистика игрока
+- Звуки достижений, урона, улучшений, ошибок
