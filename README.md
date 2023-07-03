@@ -1,4 +1,4 @@
-[Ссылка на игру](https://alexeysay.github.io/Vue-Clicker.github.io/)
+[Ссылка на игру](https://alexeype.github.io/Vue-Clicker.github.io/)
 <h1 align="center"> My Vue Clicker </h1>
 
 ![demo photo](demo.png)
